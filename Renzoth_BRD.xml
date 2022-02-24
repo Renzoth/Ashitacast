@@ -263,6 +263,7 @@
 		</cmd>
 		<cmd input="/cerb">
 			<setvar name="Cerb" value="1"/>
+			<setvar name="Set" value="FireRes"/>
 		</cmd>
 		<cmd input="/cerboff">
 			<setvar name="Cerb" value="0"/>
@@ -272,9 +273,6 @@
 		</cmd>
 		<cmd input="/balladwind">
 			<setvar name="BalladString" value="0"/>
-		</cmd>
-		<cmd input="/fireres">
-			<setvar name="Set" value="FireRes"/>
 		</cmd>
 		<cmd input="/54sync">
 			<setvar name="Set" value="54sync"/>
@@ -374,161 +372,168 @@
 
 	<premagic>
 		<if ad_type="BardSong">
-			<if advanced="$Cerb=1">
-
-			</if><else>
+			<if advanced="$Cerb!=1">
 				<equip set="HPDown"/>
-			</else>
+			</if>
 			<!-- <equip set="HPUp"/> -->
-			
 		</if>
 	</premagic>
 
 	<midmagic>
-		<if advanced="$Cerb=1">
-			<if ad_name="Advancing March|Victory March">
+		<!-- Wind -->
+		<if ad_name="Advancing March|Victory March">
+			<if advanced="$Cerb=1">
 				<equip set="FireRes">
 					<range>Faerie Piccolo</range>
 				</equip>
-			</if><elseif ad_name="Mage's Ballad*">
-				<if advanced="$BalladString=1">
-					<equip set="FireRes">
-						<range>Angel Lyre</range>
-					</equip>
-				</if><else>
-					<equip>
-						<range>Faerie Piccolo</range>
-					</equip>
-				</else>
-			</elseif><elseif ad_name="*Carol">
-				<equip set="FireRes">
-					<range>Crumhorn +1</range>
-				</equip>
-			</elseif>
-		</if><else>
-			<!-- Wind -->
-			<if ad_name="Advancing March|Victory March">
+			</if><else>
 				<equip set="Wind">
 					<range>Faerie Piccolo</range>
 				</equip>
-			</if><elseif ad_name="Sword Madrigal|Blade Madrigal">
-				<equip set="Wind">
-					<range>Traversiere +2</range>
+			</else>
+		</if><elseif ad_name="Sword Madrigal|Blade Madrigal">
+			<equip set="Wind">
+				<range>Traversiere +2</range>
+			</equip>
+		</elseif><elseif ad_name="Valor Minuet*">
+			<equip set="Wind">
+				<range>Cornette +2</range>
+			</equip>
+		</elseif><elseif ad_name="*Mazurka">
+			<equip set="String">
+				<range>Angel Lyre</range>
+			</equip>
+		</elseif><elseif ad_name="*Etude">
+			<equip set="Wind">
+				<range>Mythic Harp +1</range>
+			</equip>
+		</elseif><elseif ad_name="Mage's Ballad*">
+			<if advanced="($Cerb=1)&($BalladString=1)">
+				<equip set="FireRes">
+					<range>Angel Lyre</range>
 				</equip>
-			</elseif><elseif ad_name="Valor Minuet*">
-				<equip set="Wind">
-					<range>Cornette +2</range>
+			</if><elseif advanced="($Cerb=1)&($BalladString=0)">
+				<equip set="FireRes">
+					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><elseif ad_name="*Mazurka">
+			</elseif><elseif advanced="($Cerb=0)&($BalladString=1)">
 				<equip set="String">
 					<range>Angel Lyre</range>
 				</equip>
-			</elseif><elseif ad_name="*Etude">
+			</elseif><elseif advanced="($Cerb=0)&($BalladString=0)">
 				<equip set="Wind">
-					<range>Mythic Harp +1</range>
+					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><elseif ad_name="Mage's Ballad*">
-				<if advanced="$BalladString=1">
-					<equip set="String">
-						<range>Angel Lyre</range>
-					</equip>
-				</if><else>
-					<equip set="Wind">
-						<range>Faerie Piccolo</range>
-					</equip>
-				</else>
-			</elseif><elseif ad_name="Sheepfoe Mambo|Dragonfoe Mambo">
+			</elseif><else>
 				<equip set="Wind">
-					<range>Hellish Bugle</range>
+					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><elseif ad_name="*Prelude">
+			</else>
+			<if advanced="$BalladString=1">
+				<equip set="String">
+					<range>Angel Lyre</range>
+				</equip>
+			</if><else>
 				<equip set="Wind">
-					<range>Angel's Flute +1</range>
+					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><elseif ad_name="*Carol">
+			</else>
+		</elseif><elseif ad_name="Sheepfoe Mambo|Dragonfoe Mambo">
+			<equip set="Wind">
+				<range>Hellish Bugle</range>
+			</equip>
+		</elseif><elseif ad_name="*Prelude">
+			<equip set="Wind">
+				<range>Angel's Flute +1</range>
+			</equip>
+		</elseif><elseif ad_name="*Carol">
+			<if advanced="$Cerb=1">
+				<equip set="FireRes">
+					<range>Crumhorn +1</range>
+				</equip>
+			</if><else>
 				<equip set="Wind">
 					<range>Crumhorn +1</range>
 				</equip>
-			</elseif>
-			<!-- STRING -->
-			<elseif ad_name="Army's Paeon*">
-				<equip set="String">
-					<range>Ebony Harp +1</range>
-				</equip>
-			</elseif><elseif ad_name="Knight's Minne*">
-				<equip set="String">
-					<range>Harp +1</range>
-				</equip>
-			</elseif>
-			<!-- CHR -->
-			<elseif ad_name="Foe Lullaby">
-				<equip set="CHR">
-					<main>Apollo's Staff</main>
-					<range>Nursemaid's Harp</range>
-				</equip>
-			</elseif><elseif ad_name="Horde Lullaby">
-				<equip set="CHR">
-					<main>Apollo's Staff</main>
-					<range>Nursemaid's Harp</range>
-				</equip>
-			</elseif><elseif ad_name="Battlefield Elegy|Carnage Elegy">
-				<equip set="CHR">
-					<main>Terra's Staff</main>
-					<range>Horn +1</range>
-				</equip>
-			</elseif><elseif ad_name="*Threnody">
-				<equip set="CHR">
-					<range>Sorrowful Harp</range>
-				</equip>
-			</elseif><elseif ad_name="Foe Requiem*">
-				<equip set="CHR">
-					<main>Apollo's Staff</main>
-				</equip>
-			</elseif><elseif ad_name="Magic Finale">
-				<equip set="CHR">
-					<main>Apollo's Staff</main>
-				</equip>
-			</elseif>
+			</else>
+		</elseif>
+		<!-- STRING -->
+		<elseif ad_name="Army's Paeon*">
+			<equip set="String">
+				<range>Ebony Harp +1</range>
+			</equip>
+		</elseif><elseif ad_name="Knight's Minne*">
+			<equip set="String">
+				<range>Harp +1</range>
+			</equip>
+		</elseif>
+		<!-- CHR -->
+		<elseif ad_name="Foe Lullaby">
+			<equip set="CHR">
+				<main>Apollo's Staff</main>
+				<range>Nursemaid's Harp</range>
+			</equip>
+		</elseif><elseif ad_name="Horde Lullaby">
+			<equip set="CHR">
+				<main>Apollo's Staff</main>
+				<range>Nursemaid's Harp</range>
+			</equip>
+		</elseif><elseif ad_name="Battlefield Elegy|Carnage Elegy">
+			<equip set="CHR">
+				<main>Terra's Staff</main>
+				<range>Horn +1</range>
+			</equip>
+		</elseif><elseif ad_name="*Threnody">
+			<equip set="CHR">
+				<range>Sorrowful Harp</range>
+			</equip>
+		</elseif><elseif ad_name="Foe Requiem*">
+			<equip set="CHR">
+				<main>Apollo's Staff</main>
+			</equip>
+		</elseif><elseif ad_name="Magic Finale">
+			<equip set="CHR">
+				<main>Apollo's Staff</main>
+			</equip>
+		</elseif>
 
-			<if ad_type="WhiteMagic">
-				<equip set="MND"/>
-				<if ad_name="Cure*">
-					<equip>
-						<main>Apollo's Staff</main>
-						<neck>Healing Torque</neck>
-					</equip>
-				</if>
-				<!-- Minimum requirements for capping Stoneskin damage mitigation (350dmg)
-					Enhancing Skill 278 (Torque,AF Legs): 88MND required
-					Enhancing Skill 293 (Torque,AF2 Hands,AF Legs): 84MND required 
-					Enhancing Skill 296 (Torque,Jupon,AF2 Hands,AF Legs): 82MND required
-					Enhancing Skill 298 (Torque,AF2 Hands,Cape,AF Legs): 81MND required 
-					Enhancing Skill 301 (Torque,Jupon,AF2 Hands,Cape,AF Legs): 80MND required -->
-				<elseif ad_name="Stoneskin">
-					<equip>
-						<main>Neptune's Staff</main>
-						<neck>Promise Badge</neck>
-					</equip>
-				</elseif><elseif ad_name="Silence">
-					<equip>
-						<main>Auster's Staff</main>
-						<neck>Enfeebling Torque</neck>
-					</equip>
-				</elseif>
-			</if><elseif ad_type="Ninjutsu">
-				<equip set="Haste"/>
-				<if ad_name="Monomi*">
-					<command>/cancel 71</command>
-				</if>
-			</elseif>
-
-			<if ad_skill="enhancingmagic">
+		<if ad_type="WhiteMagic">
+			<equip set="MND"/>
+			<if ad_name="Cure*">
 				<equip>
-					<neck>Enhancing Torque</neck>
+					<main>Apollo's Staff</main>
+					<neck>Healing Torque</neck>
 				</equip>
 			</if>
-		</else>
-		
+			<!-- Minimum requirements for capping Stoneskin damage mitigation (350dmg)
+				Enhancing Skill 278 (Torque,AF Legs): 88MND required
+				Enhancing Skill 293 (Torque,AF2 Hands,AF Legs): 84MND required 
+				Enhancing Skill 296 (Torque,Jupon,AF2 Hands,AF Legs): 82MND required
+				Enhancing Skill 298 (Torque,AF2 Hands,Cape,AF Legs): 81MND required 
+				Enhancing Skill 301 (Torque,Jupon,AF2 Hands,Cape,AF Legs): 80MND required -->
+			<elseif ad_name="Stoneskin">
+				<equip>
+					<main>Neptune's Staff</main>
+					<neck>Promise Badge</neck>
+				</equip>
+			</elseif><elseif ad_name="Silence">
+				<equip>
+					<main>Auster's Staff</main>
+					<neck>Enfeebling Torque</neck>
+				</equip>
+			</elseif>
+		</if><elseif ad_type="Ninjutsu">
+			<equip set="Haste"/>
+			<if ad_name="Monomi*">
+				<command>/cancel 71</command>
+			</if>
+		</elseif>
+
+		<if ad_skill="enhancingmagic">
+			<equip>
+				<neck>Enhancing Torque</neck>
+			</equip>
+		</if>
 	</midmagic>
 
 	<idlegear>
