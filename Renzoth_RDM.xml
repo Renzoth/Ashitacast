@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<ashitacast>
+	<settings>
+		<buffupdate>true</buffupdate>
+		<statusupdate>true</statusupdate>
+		<hpupdate>true</hpupdate>
+		<autoupdate>true</autoupdate>
+	</settings>
+	<sets>
+		<set name="Idle">
+			<main>Terra's Staff</main>
+			<sub>Bugard Strap +1</sub>
+			<ammo>Hedgehog Bomb</ammo>
+			<!-- <head>Warlock's Chapeau</head>
+			<body>Royal Redingote</body> -->
+			<hands>Zenith Mitts</hands>
+			<legs>Crimson Cuisses</legs>
+			<feet>Errant Pigaches</feet>
+			<neck>Enfeebling Torque</neck>
+			<waist>Penitent's Rope</waist>
+			<ear1>Helenus's Earring</ear1>
+			<ear2>Cass. Earring</ear2>
+			<ring1>Serket Ring</ring1>
+			<ring2>Vilma's Ring</ring2>
+			<back>Rainbow Cape</back>
+		</set>
+		<set name="Resting">
+			<main>Pluto's Staff</main>
+			<head>Mirror Tiara</head>
+			<body>Yigit Gomlek</body>
+			<legs>Baron's Slops</legs>
+			<neck>Beak Necklace</neck>
+			<waist>Qiqirn Sash +1</waist>
+		</set>
+		<set name="Melee">
+			<head>Walahra Turban</head>
+			<body>Scp. Harness +1</body>
+			<hands>Warlock's Gloves</hands>
+			<legs>Crimson Cuisses</legs>
+			<feet>Crimson Greaves</feet>
+			<neck>Peacock Charm</neck>
+			<waist>Headlong Belt</waist>
+			<ear1>Suppanomimi</ear1>
+			<ear2>Merman's Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sniper's Ring +1</ring2>
+			<back>Forager's Mantle</back>
+		</set>
+		<set name="MND">
+			<head>Errant Hat</head>
+			<body>Errant Hpl.</body>
+			<hands>Devotee's Mitts</hands>
+			<legs>Errant Slops</legs>
+			<feet>Errant Pigaches</feet>
+			<neck>Promise Badge</neck>
+			<waist>Penitent's Rope</waist>
+			<ring1>Sapphire Ring</ring1>
+			<ring2>Sapphire Ring</ring2>
+			<back>White Cape</back>
+		</set>
+		<set name="INT">
+			<ammo>Phtm. Tathlum</ammo>
+			<head>Errant Hat</head>
+			<body>Errant Hpl.</body>
+			<hands>Errant Cuffs</hands>
+			<legs>Errant Slops</legs>
+			<neck>Beak Necklace</neck>
+			<waist>Penitent's Rope</waist>
+			<ring1>Diamond Ring</ring1>
+			<ring2>Diamond Ring</ring2>
+			<back>Rainbow Cape</back>
+		</set>
+		<set name="STRWS">
+			<hands>Alkyoneus's Brc.</hands>
+			<neck>Spike Necklace</neck>
+			<waist>Ryl.Kgt. Belt</waist>
+			<back>Smilod. Mantle +1</back>
+			<ring1>Ruby Ring</ring1>
+			<ring2>Ruby Ring</ring2>
+		</set>
+		<set name="SavageBlade">
+			<head>Voyager Sallet</head>
+			<legs>Warlock's Tights</legs>
+			<feet>Errant Pigaches</feet>
+			<hands>Alkyoneus's Brc.</hands>
+			<neck>Chivalrous Chain</neck>
+			<waist>Warwolf Belt</waist>
+			<back>Forager's Mantle</back>
+			<ear2>Triumph Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Victory Ring</ring2>
+		</set>
+		<set name="Fastcast">
+			<head>Warlock's Chapeau</head>
+			<body>Royal Redingote</body>
+		</set>
+		<set name="Haste">
+			<head>Walahra Turban</head>
+			<body>Scp. Harness +1</body>
+			<hands>Dusk Gloves</hands>
+			<waist>Headlong Belt</waist>
+			<legs>Byakko's Haidate</legs>
+			<feet>Dusk Ledelsens</feet>
+		</set>
+		<set name="Empty">
+			<main></main>
+			<sub></sub>
+			<range></range>
+			<ammo></ammo>
+			<head></head>
+			<neck></neck>
+			<ear1></ear1>
+			<ear2></ear2>
+			<body></body>
+			<hands></hands>
+			<ring1></ring1>
+			<ring2></ring2>
+			<back></back>
+			<waist></waist>
+			<legs></legs>
+			<feet></feet>
+		</set>
+		<set name="50sync">
+			<main>Rose Wand +1</main>
+			<sub>Spellcaster's Ecu</sub>
+			<head>Gold Hairpin</head>
+			<body>Glamor Jupon</body>
+			<hands>Devotee's Mitts</hands>
+			<legs>Savage Loincloth</legs>
+			<feet>Leaping Boots</feet>
+			<neck>Promise Badge</neck>
+			<waist>Qiqirn Sash +1</waist>
+			<ear1>Astral Earring</ear1>
+			<ear2>Energy Earring</ear2>
+			<ring1>Astral Ring</ring1>
+			<ring2>Vilma's Ring</ring2>
+			<back>Red Cape</back>
+		</set>
+		<include>
+			<item quantity="12">Echo Drops</item>
+		</include>
+	</sets>
+
+	<init>
+		<command delay="1000">/macro book 2</command>
+	</init>
+
+	<variables>
+		<var name="init">0</var>
+		<var name="Set">Idle</var>
+		<var name="Idle">1</var>
+		<var name="Melee">0</var>
+		<var name="Mining">0</var>
+		<var name="IceStaff">Aquilo's Staff</var>
+		<var name="WindStaff">Auster's Staff</var>
+		<var name="EarthStaff">Terra's Staff</var>
+		<var name="ThunderStaff">Jupiter's Staff</var>
+		<var name="WaterStaff">Neptune's Staff</var>
+		<var name="FireStaff">Vulcan's Staff</var>
+		<var name="DarkStaff">Pluto's Staff</var>
+		<var name="LightStaff">Apollo's Staff</var>
+
+		<var name="FireEn">Enfire</var>
+		<var name="EarthEn">Enstone</var>
+		<var name="WaterEn">Enwater</var>
+		<var name="WindEn">Enaero</var>
+		<var name="IceEn">Enblizzard</var>
+		<var name="ThunderEn">Enthunder</var>
+		<var name="LightEn">Enthunder</var>
+		<var name="DarkEn">Enthunder</var>
+	</variables>
+
+	<inputcommands>
+		<cmd input ="/enspell">
+			<command>/ma $%e_dayelementEn &lt;me&gt;</command>
+		</cmd>
+
+		<cmd input="/idle">
+			<setvar name="Set" value="Idle"/>
+		</cmd>
+		<cmd input="/melee">
+			<setvar name="Set" value="Melee"/>
+		</cmd>
+		<cmd input="/empty">
+			<setvar name="Set" value="Empty"/>
+		</cmd>
+		<cmd input="/pdt">
+			<setvar name="Set" value="PDT"/>
+		</cmd>
+		<cmd input="/ws">
+			<setvar name="Set" value="SavageBlade"/>
+		</cmd>
+	</inputcommands>
+
+	<idlegear>
+		<equip set="$set"/>
+
+		<if advanced="$set=Idle">
+			<if advanced="%p_mp &lt;= 800">
+				<equip>
+					<body>Royal Cloak</body>
+				</equip>
+			</if><else>
+				<equip>
+					<head>Warlock's Chapeau</head>
+					<body>Yigit Gomlek</body>
+				</equip>
+			</else>
+		</if><elseif advanced="$set=Melee">
+
+			<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
+				<equip>
+					<ear2>Merman's Earring</ear2>
+				</equip>
+			</if>
+			<else>
+				<equip>
+					<ear2>Fenrir's Earring</ear2>
+				</equip>
+			</else>
+			
+			<if p_subjob="WHM">
+				<equip>
+					<main>Joyeuse</main>
+					<sub>Genbu's Shield</sub>
+				</equip>
+			</if>
+			<elseif p_subjob="NIN">
+				<equip>
+					<main>Enhancing Sword</main>
+					<sub>Joyeuse</sub>
+					<ear1>Suppanomimi</ear1>
+				</equip>
+			</elseif>
+
+			<if p_status="Engaged">
+				<equip>
+					<hands>Dusk Gloves</hands>
+					<feet>Dusk Ledelsens</feet>
+				</equip>
+			</if>
+		</elseif>
+
+		<if p_status="resting">
+			<equip set="Resting"/>
+			<if p_joblevel="&lt;51">
+				<equip>
+					<main>Pilgrim's Wand</main>
+				</equip>
+			</if>
+		</if>
+
+		<if e_area="Northern San d'Oria|Southern San d'Oria|Port San d'Oria">
+			<equip>
+				<head>Warlock's Chapeau</head>
+				<body>Kingdom Aketon</body>
+			</equip>
+		</if>
+	</idlegear>
+
+	<preranged></preranged>
+
+	<midranged></midranged>
+
+	<premagic>
+		<equip set="Fastcast"></equip>
+	</premagic>
+
+	<midmagic>
+		<if advanced="$Set=Idle">
+			<if ad_type="WhiteMagic">
+				<if ad_name="Cure*|Curaga*">
+					<equip set="MND"/>
+					<equip>
+						<main>$LightStaff</main>
+					</equip>
+				</if><elseif ad_name="Stoneskin">
+					<equip set="MND"/>
+					<equip>
+						<main>$WaterStaff</main>
+					</equip>
+				</elseif>
+			</if>
+			<elseif ad_type="BlackMagic">
+				<equip set="INT"/>
+			</elseif>
+
+			<if ad_element="dark">
+				<equip>
+					<main>$DarkStaff</main>
+				</equip>
+			</if>
+			<elseif ad_element="earth">
+				<equip>
+					<main>$EarthStaff</main>
+				</equip>
+			</elseif>
+			<elseif ad_element="fire">
+				<equip>
+					<main>$FireStaff</main>
+				</equip>
+			</elseif>
+			<elseif ad_element="ice">
+				<equip>
+					<main>$IceStaff</main>
+				</equip>
+			</elseif>
+			<elseif ad_element="light">
+				<equip>
+					<main>$LightStaff</main>
+				</equip>
+			</elseif>
+			<elseif ad_element="thunder">
+				<equip>
+					<main>$ThunderStaff</main>
+				</equip>
+			</elseif>
+			<elseif ad_element="water">
+				<equip>
+					<main>$WaterStaff</main>
+				</equip>
+			</elseif>
+			<elseif ad_element="wind">
+				<equip>
+					<main>$WindStaff</main>
+				</equip>
+			</elseif>
+		</if>
+
+		<if ad_skill="enfeeblingmagic|elementalmagic|darkmagic">
+			<equip>
+				<body>Royal Redingote</body>
+				<ear1>Helenus's Earring</ear1>
+				<ear2>Cass. Earring</ear2>
+				<ring1>Balrahn's Ring</ring1>
+			</equip>
+			<if ad_skill="enfeeblingmagic">
+				<if ad_type="WhiteMagic">
+					<equip set="MND"/>
+				</if>
+				<equip>
+					<neck>Enfeebling Torque</neck>
+					<body>Warlock's Tabard</body>
+				</equip>
+			</if>
+			<elseif ad_skill="elementalmagic">
+				<if advanced="%p_mpp &lt;= 50">
+					<equip>
+						<neck>Uggalepih Pendant</neck>
+					</equip>
+				</if><else>
+					<equip>
+						<neck>Elemental Torque</neck>
+					</equip>
+				</else>
+				<equip>
+					<body>Yigit Gomlek</body>
+					<hands>Zenith Mitts</hands>
+				</equip>
+			</elseif>
+			<elseif ad_skill="darkmagic">
+				<equip>
+					<neck>Dark Torque</neck>
+				</equip>
+			</elseif>
+		</if>
+		<elseif ad_skill="healingmagic">
+			<equip>
+				<legs>Warlock's Tights</legs>
+				<neck>Healing Torque</neck>
+			</equip>
+		</elseif>
+		<elseif ad_skill="enhancingmagic">
+			<equip>
+				<legs>Warlock's Tights</legs>
+				<neck>Enhancing Torque</neck>
+			</equip>
+		</elseif>
+		
+		<if ad_type="Ninjutsu">
+			<equip set="Haste"/>
+			<if ad_name="Monomi*">
+				<command>/cancel 71</command>
+			</if><elseif ad_name="Utsusemi*">
+				<equip>
+					<neck>Evasion Torque</neck>
+					<back>Bat Cape</back>
+				</equip>
+			</elseif>
+		</if>
+	</midmagic>
+
+	<jobability></jobability>
+	<weaponskill>
+		<if ad_name="Vorpal Blade">
+			<equip set="STRWS"/>
+		</if>
+		<elseif ad_name="Savage Blade">
+			<equip set="SavageBlade"/>
+		</elseif>
+	</weaponskill>
+</ashitacast>

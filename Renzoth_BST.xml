@@ -1,0 +1,208 @@
+<ashitacast>
+	<settings>
+		<buffupdate>true</buffupdate>
+		<statusupdate>true</statusupdate>
+		<hpupdate>true</hpupdate>
+		<autoupdate>true</autoupdate>
+	</settings>
+	<sets>
+		<set name="Idle">
+			<main>Lyft Tabar</main>
+			<sub>Viking Axe</sub>
+			<ammo></ammo>
+			<head>Spurrer Beret</head>
+			<body>Haubergeon</body>
+			<hands>Ogre Gloves +1</hands>
+			<legs>Byakko's Haidate</legs>
+			<feet>Winged Boots</feet>
+			<neck>Peacock Charm</neck>
+			<waist>Headlong Belt</waist>
+			<ear1>Merman's Earring</ear1>
+			<ear2>Merman's Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sniper's Ring +1</ring2>
+			<back>Amemet Mantle +1</back>
+		</set>
+		<set name="WS">
+			<!-- <neck>Spike Necklace</neck> -->
+			<body>Haubergeon</body>
+			<hands>Pallas's Bracelets</hands>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Ruby Ring</ring2>
+			<waist>Virtuoso Belt</waist>
+			<back>Smilod. Mantle +1</back>
+		</set>
+		<set name="Charm">
+			<main>Apollo's Staff</main>
+			<sub>Bugard Strap +1</sub>
+			<head>Monster Helm</head>
+			<body>Beast Jackcoat</body>
+			<hands>Beast Gloves</hands>
+			<legs>Beast Trousers</legs>
+			<feet>Beast Gaiters</feet>
+			<neck>Bird Whistle</neck>
+			<waist>Ryl.Kgt. Belt</waist>
+			<ring1>Light Ring</ring1>
+			<ring2>Moon Ring</ring2>
+			<ear1>Melody Earring +1</ear1>
+			<ear2>Melody Earring +1</ear2>
+		</set>
+		<set name="MND">
+			<neck>Promise Badge</neck>
+			<waist>Ryl.Kgt. Belt</waist>
+			<feet>Suzaku's Sune-Ate</feet>
+			<ring1>Sapphire Ring</ring1>
+			<ring2>Sapphire Ring</ring2>
+		</set>
+		<set name="PetBurn41">
+			<main>Warrior's Axe</main>
+			<sub>Warrior's Axe</sub>
+			<!-- <ammo>Meat Broth</ammo> -->
+			<head>Emperor Hairpin</head>
+			<body>Aega's Doublet</body>
+			<hands>Kingdom Gloves</hands>
+			<legs>Herder's Subligar</legs>
+			<feet>Winged Boots</feet>
+			<neck>Peacock Charm</neck>
+			<waist>Warrior's Belt +1</waist>
+			<ear1>Bloodbead Earring</ear1>
+			<ear2>Beetle Earring +1</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Jaeger Ring</ring2>
+			<back>Exact. Mantle +1</back>
+		</set>
+		<include>
+		</include>
+	</sets>
+	<init>
+		<if advanced="%p_subjob=NIN">
+			<command delay="1000">/macro book 4</command>
+			<command delay="2000">/macro set 1</command>
+		</if><elseif advanced="%p_subjob=WHM">
+			<command delay="1000">/macro book 7</command>
+			<command delay="2000">/macro set 1</command>
+		</elseif><elseif advanced="%p_subjob=DNC">
+			<command delay="1000">/macro book 7</command>
+			<command delay="2000">/macro set 6</command>
+		</elseif>
+		
+	</init>
+	<variables>
+		<var name="Idle">1</var>
+	</variables>
+	<inputcommands>
+		<cmd input="/couriercarrie">
+			<equip>
+				<ammo>Fish Oil Broth</ammo>
+			</equip>
+			<command>/ja "Call Beast" &lt;me&gt;</command>
+			<if advanced="%p_subjob=NIN">
+				<command delay="1000">/macro set 2</command>
+			</if><elseif advanced="%p_subjob=WHM">
+				<command delay="1000">/macro set 2</command>
+			</elseif><elseif advanced="%p_subjob=DNC">
+				<command delay="1000">/macro set 7</command>
+			</elseif>
+		</cmd>
+		<cmd input="/homunculus">
+			<equip>
+				<ammo>Alchemist Water</ammo>
+			</equip>
+			<command>/ja "Call Beast" &lt;me&gt;</command>
+			<if advanced="%p_subjob=NIN">
+				<command delay="1000">/macro set 3</command>
+			</if><elseif advanced="%p_subjob=WHM">
+				<command delay="1000">/macro set 3</command>
+			</elseif><elseif advanced="%p_subjob=DNC">
+				<command delay="1000">/macro set 8</command>
+			</elseif>
+		</cmd>
+	</inputcommands>
+	<idlegear>
+		<equip set="Idle"/>
+		<if p_status="Engaged">
+			<equip>
+				<hands>Dusk Gloves</hands>
+				<feet>Dusk Ledelsens</feet>
+			</equip>
+		</if>
+		
+		<if p_subjob="NIN">
+		</if>
+		<if advanced="(%p_joblevel &lt;= 42)">
+			<equip set="PetBurn41"/>
+			<if advanced="(%p_joblevel >= 40)">
+				<equip>
+					<hands>Ogygos's Brc.</hands>
+					<ring2>Sniper's Ring +1</ring2>
+				</equip>
+			</if>
+		</if>
+
+		<if advanced="%p_subjob=NIN">
+			<equip>
+				<sub>Zoraal Ja's Axe</sub>
+				<ear1>Suppanomimi</ear1>
+			</equip>
+		</if><else>
+			<equip>
+				<sub>Tatami Shield</sub>
+			</equip>
+			<if p_status="resting">
+				<equip set="Resting" />
+			</if>
+
+			<if >
+				<if advanced="(%p_subjob=WHM)&(%p_mp &lt;= 49)">
+					<equip>
+						<body>Gaudy Harness</body>
+					</equip>
+				</if>
+			</if>
+		</else>
+	</idlegear>
+	<preranged>
+	</preranged>
+	<midranged>
+		
+	</midranged>
+	<premagic>
+	</premagic>
+	<midmagic>
+		<if ad_name="Cure*">
+			<equip set="MND"/>
+		</if>
+		
+	</midmagic>
+	<jobability>
+		<if ad_name="Charm">
+			<equip set="Charm"/>
+		</if>
+		<elseif ad_name="Reward">
+			<equip set="MND"/>
+			<equip>
+				<ammo>Pet Food Zeta</ammo>
+				<body>Beast Jackcoat</body>
+				<hands>Ogre Gloves +1</hands>
+				<feet>Beast Gaiters</feet>
+			</equip>
+		</elseif>
+		<elseif ad_name="Tame">
+			<main>Aquilo's Staff</main>
+			<sub>Bugard Strap +1</sub>
+			<ammo>Phtm. Tathlum</ammo>
+			<head>Beast Helm</head>
+			<ring1>Diamond Ring</ring1>
+			<ring2>Windurstian Ring</ring2>
+			<waist>Ryl.Kgt. Belt</waist>
+			<legs>Bison Keks</legs>
+		</elseif>
+	</jobability>
+	<weaponskill>
+		<if ad_name="Raging Axe">
+			<equip set="WS"/>
+		</if><elseif ad_name="Rampage">
+			<equip set="WS"/>
+		</elseif>
+	</weaponskill>
+</ashitacast>

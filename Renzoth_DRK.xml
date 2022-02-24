@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<ashitacast>
+	<settings>
+		<buffupdate>true</buffupdate>
+		<statusupdate>true</statusupdate>
+		<hpupdate>true</hpupdate>
+		<autoupdate>true</autoupdate>
+	</settings>
+	<sets>
+		
+		<set name="Idle">
+			<main>Havoc Scythe</main>
+			<sub>Pole Grip</sub>
+			<ammo>Tiphia Sting</ammo>
+			<head>Valkyrie's Mask</head>
+			<body>Haubergeon</body>
+			<hands>Ryl.Sqr. Mufflers</hands>
+			<legs>Ryl.Kgt. Breeches</legs>
+			<feet>Winged Boots</feet>
+			<neck>Chivalrous Chain</neck>
+			<waist>Virtuoso Belt</waist>
+			<ear1>Merman's Earring</ear1>
+			<ear2>Merman's Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sniper's Ring +1</ring2>
+			<back>Forager's Mantle</back>
+		</set>
+		<set name="Guillotine">
+			<main></main>
+			<sub></sub>
+			<range></range>
+			<ammo></ammo>
+			<head>Chaos Burgeonet</head>
+			<neck>Chivalrous Chain</neck>
+			<ear1></ear1>
+			<ear2></ear2>
+			<body>Haubergeon</body>
+			<hands>Alkyoneus's Brc.</hands>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sapphire Ring</ring2>
+			<back>Forager's Mantle</back>
+			<waist>Warwolf Belt</waist>
+			<legs></legs>
+			<feet>Chaos Sollerets</feet>
+		</set>
+		<set name="SpiralHell">
+			<main></main>
+			<sub></sub>
+			<range></range>
+			<ammo></ammo>
+			<head>Chaos Burgeonet</head>
+			<neck>Peacock Charm</neck>
+			<ear1></ear1>
+			<ear2></ear2>
+			<body>Haubergeon</body>
+			<hands>Pallas's Bracelets</hands>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Victory Ring</ring2>
+			<back>Smilod. Mantle +1</back>
+			<waist>Virtuoso Belt</waist>
+			<legs></legs>
+			<feet></feet>
+		</set>
+		<set name="STRWS">
+			<main></main>
+			<sub></sub>
+			<range></range>
+			<ammo></ammo>
+			<head></head>
+			<neck></neck>
+			<ear1></ear1>
+			<ear2></ear2>
+			<body></body>
+			<hands></hands>
+			<ring1></ring1>
+			<ring2></ring2>
+			<back></back>
+			<waist></waist>
+			<legs></legs>
+			<feet></feet>
+		</set>
+		<set name="INT">
+			<main></main>
+			<sub></sub>
+			<range></range>
+			<ammo></ammo>
+			<head></head>
+			<neck>Beak Necklace</neck>
+			<ear1></ear1>
+			<ear2></ear2>
+			<body></body>
+			<hands></hands>
+			<ring1>Zircon Ring</ring1>
+			<ring2>Zircon Ring</ring2>
+			<back></back>
+			<waist></waist>
+			<legs>Chaos Flanchard</legs>
+			<feet></feet>
+		</set>
+		<set>
+			<main></main>
+			<sub></sub>
+			<range></range>
+			<ammo></ammo>
+			<head></head>
+			<neck></neck>
+			<ear1></ear1>
+			<ear2></ear2>
+			<body></body>
+			<hands></hands>
+			<ring1></ring1>
+			<ring2></ring2>
+			<back></back>
+			<waist></waist>
+			<legs></legs>
+			<feet></feet>
+		</set>
+		<include>
+		</include>
+	</sets>
+	<variables>
+		<var name="Idle">1</var>
+	</variables>
+	<inputcommands>
+	</inputcommands>
+	<idlegear>
+		<equip set="Idle"/>
+		<if p_status="Engaged">
+			<equip>
+				<hands>Dusk Gloves</hands>
+				<feet>Dusk Ledelsens</feet>
+			</equip>
+		</if>
+
+		<if advanced="%p_subjob!=NIN">
+			<equip>
+				<main>Warp Cudgel</main>
+			</equip>
+		</if><else>
+		</else>
+
+		<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
+			<!-- NIGHT -->
+			<equip>
+				<ear2>Merman's Earring</ear2>
+			</equip>
+		</if>
+		<else>
+			<!-- DAY -->
+			<equip>
+				<ear2>Fenrir's Earring</ear2>
+			</equip>
+		</else>
+	</idlegear>
+	<preranged>
+	</preranged>
+	<midranged>
+		
+	</midranged>
+	<premagic>
+	</premagic>
+	<midmagic>
+		<if ad_skill="enfeeblingmagic|elementalmagic|darkmagic">
+			<equip set="INT"/>
+			<if ad_skill="enfeeblingmagic">
+				<equip>
+					<neck>Enfeebling Torque</neck>
+					<body>Chaos Cuirass</body>
+				</equip>
+			</if>
+			<elseif ad_skill="elementalmagic">
+				<equip>
+					<neck>Elemental Torque</neck>
+				</equip>
+			</elseif>
+			<elseif ad_skill="darkmagic">
+				<equip>
+					<head>Chaos Burgeonet</head>
+					<neck>Dark Torque</neck>
+				</equip>
+			</elseif>
+
+			<equip>
+				<ear1>Helenus's Earring</ear1>
+				<ear2>Cass. Earring</ear2>
+				<ring1>Balrahn's Ring</ring1>
+			</equip>
+		</if>
+		
+	</midmagic>
+	<jobability>
+		<if ad_name="Souleater">
+			<equip>
+				<head>Chaos Burgeonet</head>
+			</equip>
+		</if><elseif ad_name="Arcane Circle">
+			<equip>
+				<feet>Chaos Sollerets</feet>
+			</equip>
+		</elseif><elseif ad_name="Weapon Bash">
+			<equip>
+				<feet>Chaos Gauntlets</feet>
+			</equip>
+		</elseif>
+		
+	</jobability>
+	<weaponskill>
+		<if ad_name="Guillotine">
+			<equip set="Guillotine"/>
+		</if><elseif ad_name="Spiral Hell">
+			<equip set="SpiralHell"/>
+		</elseif><else>
+			<equip set="STR"/>
+		</else>
+	</weaponskill>
+</ashitacast>

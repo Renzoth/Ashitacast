@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<ashitacast>
+	<settings>
+		<buffupdate>true</buffupdate>
+		<statusupdate>true</statusupdate>
+		<hpupdate>true</hpupdate>
+		<autoupdate>true</autoupdate>
+	</settings>
+	<sets>
+		<set name="Idle">
+			
+			<range>Velocity Bow</range>
+			<head>Walahra Turban</head>
+			<body>Rapparee Harness</body>
+			<hands>War Gloves +1</hands>
+			<legs>Bravo's Subligar</legs>
+			<feet>Winged Boots</feet>
+			<neck>Peacock Charm</neck>
+			<waist>Headlong Belt</waist>
+			<ear1>Suppanomimi</ear1>
+			<ear2>Merman's Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sniper's Ring +1</ring2>
+			<back>Forager's Mantle</back>
+		</set>
+		<set name="SA">
+			<head>Voyager Sallet</head>
+			<body>Scp. Harness +1</body>
+			<hands>Rogue's Armlets</hands>
+			<legs>Dragon Subligar</legs>
+			<feet>Winged Boots</feet>
+			<neck>Spike Necklace</neck>
+			<waist>Virtuoso Belt</waist>
+			<ear1>Merman's Earring</ear1>
+			<ear2>Merman's Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Thunder Ring</ring2>
+			<back>Forager's Mantle</back>
+		</set>
+		<set name="RA">
+			<!-- <body>Noct Doublet +1</body>
+			<hands>Noct Gloves +1</hands> -->
+			<legs>Rogue's Culottes</legs>
+			<ring1>Merman's Ring</ring1>
+			<ear1>Drone Earring</ear1>
+			<ear2>Drone Earring</ear2>
+		</set>
+		<set name="EVA">
+			<head>Optical Hat</head>
+			<body>Scp. Harness +1</body>
+			<hands>War Gloves +1</hands>
+			<legs>Rogue's Culottes</legs>
+			<feet>Dance Shoes</feet>
+			<neck>Evasion Torque</neck>
+			<waist>Scouter's Rope</waist>
+			<ear1>Suppanomimi</ear1>
+			<ear2>Elusive Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sniper's Ring +1</ring2>
+			<back>Bat Cape</back>
+		</set>
+		<set name="FullAcc">
+			<head>Optical Hat</head> 10
+			<body>Scp. Harness +1</body> 12
+			<neck>Peacock Charm</neck> 10
+			<waist>Virtuoso Belt</waist> 12
+			<ring1>Lava's Ring</ring1> 6
+			<ring2>Kusha's Ring</ring2> 6 
+		</set>
+		<set name="Haste">
+			<head>Walahra Turban</head>
+			<body>Scp. Harness +1</body>
+			<hands>Dusk Gloves</hands>
+			<waist>Headlong Belt</waist>
+			<legs>Byakko's Haidate</legs>
+			<feet>Sha'ir Crackows</feet>
+		</set>
+		<set name="CHR">
+			<neck>Bird Whistle</neck>
+			<waist>Ryl.Kgt. Belt</waist>
+			<ring1>Light Ring</ring1>
+			<ring2>Moon Ring</ring2>
+			<ear1>Melody Earring +1</ear1>
+			<ear2>Melody Earring +1</ear2>
+		</set>
+		<set name="35sync">
+			<main>Archer's Knife</main>
+			<sub>Archer's Knife</sub>
+			<range>Zamburak +1</range>
+			<ammo>Acid Bolt</ammo>
+			<head>Emperor Hairpin</head>
+			<body>Noct Doublet +1</body>
+			<hands>Noct Gloves +1</hands>
+			<legs>Noct Brais +1</legs>
+			<feet>Winged Boots</feet>
+			<neck>Peacock Charm</neck>
+			<waist>Mrc.Cpt. Belt</waist>
+			<ear1>Drone Earring</ear1>
+			<ear2>Drone Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Horn Ring +1</ring2>
+			<back>Nomad's Mantle +1</back>
+		</set>
+	</sets>
+	<init>
+		<command delay="1000">/macro book 3</command>
+	</init>
+	<variables>
+		<var name="Idle">1</var>
+		<var name="Eva">0</var>
+	</variables>
+	<inputcommands>
+		<cmd input="/eva">
+			<setvar name="Idle" value="0"/>
+			<if advanced="$Eva=0">
+				<setvar name="Eva" value="1"/>
+			</if>
+		</cmd>
+		<cmd input="/eva off">
+			<if advanced="$Eva=1">
+				<setvar name="Eva" value="0"/>
+				<setvar name="Idle" value="1"/>
+			</if>
+		</cmd>
+	</inputcommands>
+	<idlegear>
+		<if advanced="$Idle=1">
+			<equip set="Idle"/>
+		</if><elseif advanced="$Eva=1">
+			<equip set="Eva"/>
+		</elseif>
+		<if p_status="Idle">
+		</if><elseif p_status="Engaged">
+			<equip>
+				<hands>Dusk Gloves</hands>
+				<feet>Dusk Ledelsens</feet>
+			</equip>
+		</elseif>
+
+		<if advanced="%p_subjob=NIN">
+			<equip>
+				<main>Harpe</main>
+				<sub>Thief's Knife</sub>
+			</equip>
+		</if><else>
+			<equip>
+				<main>Thief's Knife</main>
+				<sub>Tatami Shield</sub>
+			</equip>
+		</else>
+
+		<if buffactive="Sneak Attack">
+			<equip set="SA"/>
+		</if>
+
+		<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
+			<!-- NIGHT -->
+			<if advanced="$Idle=1">
+				<equip>
+					<ear2>Merman's Earring</ear2>
+				</equip>
+				
+			</if><elseif advanced="$Eva=1">
+				<equip>
+					<ear2>Elusive Earring</ear2>
+				</equip>
+				
+			</elseif>
+			<equip>
+				
+			</equip>
+		</if>
+		<else>
+			<!-- DAY -->
+			<equip>
+				<ear2>Fenrir's Earring</ear2>
+			</equip>
+		</else>
+
+		<if eq_main="Warp Cudgel">
+			<equip lock="true">
+				<main>Warp Cudgel</main>
+			</equip>
+		</if>
+
+		<if advanced="(%p_joblevel &lt;= 41)">
+			<equip set="35sync"/>
+		</if>
+	</idlegear>
+
+	<preranged>
+	</preranged>
+
+	<midranged>
+		<equip set="RA"/>
+		<if advanced="(e_time>18.01)|(e_time&lt;5.59)">
+			<equip>
+				<ear2>Fenrir's Earring</ear2>
+			</equip>
+		</if>
+		<else>
+		</else>
+	</midranged>
+
+	<premagic>
+	</premagic>
+
+	<midmagic>
+		<if ad_type="Ninjutsu">
+			<equip set="Haste"/>
+			<if ad_name="Monomi*">
+				<command>/cancel 71</command>
+			</if>
+		</if>
+	</midmagic>
+
+	<jobability>
+		<if ad_name="Flee">
+			<equip>
+				<feet>Rogue's Poulaines</feet>
+			</equip>
+		</if>
+		<elseif ad_name="Steal">
+			<equip>
+				<head>Rogue's Bonnet</head>
+				<hands>Rogue's Armlets</hands>
+				<legs>Rogue's Culottes</legs>
+				<feet>Rogue's Poulaines</feet>
+			</equip>
+		</elseif><elseif ad_name="Curing Waltz II">
+			<equip set="CHR"/>
+		</elseif>
+	</jobability>
+
+	<weaponskill>
+		<if ad_name="Evisceration">
+			<equip set="SA">
+				<neck>Peacock Charm</neck>
+			</equip>
+		</if>
+	</weaponskill>
+</ashitacast>
