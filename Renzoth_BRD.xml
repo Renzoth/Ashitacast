@@ -408,7 +408,7 @@
 				<range>Mythic Harp +1</range>
 			</equip>
 		</elseif><elseif ad_name="Mage's Ballad*">
-			<if advanced="($Cerb=1)&($BalladString=1)">
+			<if advanced="($Cerb=1)AND($BalladString=1)">
 				<equip set="FireRes">
 					<range>Angel Lyre</range>
 				</equip>
