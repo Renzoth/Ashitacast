@@ -253,20 +253,20 @@
 
 	<inputcommands>
 		<cmd input="/idle">
+			<setvar name="Cerb" value="0"/>
 			<setvar name="Set" value="Idle"/>
 		</cmd>
 		<cmd input="/melee">
+			<setvar name="Cerb" value="0"/>
 			<setvar name="Set" value="Melee"/>
 		</cmd>
 		<cmd input="/empty">
+			<setvar name="Cerb" value="0"/>
 			<setvar name="Set" value="Empty"/>
 		</cmd>
 		<cmd input="/cerb">
 			<setvar name="Cerb" value="1"/>
 			<setvar name="Set" value="FireRes"/>
-		</cmd>
-		<cmd input="/cerboff">
-			<setvar name="Cerb" value="0"/>
 		</cmd>
 		<cmd input="/balladstring">
 			<setvar name="BalladString" value="1"/>
