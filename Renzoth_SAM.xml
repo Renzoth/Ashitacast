@@ -136,7 +136,7 @@
 			<neck>Buburimu Gorget</neck>
 			<waist>Water Belt</waist>
 			<ear1>Triumph Earring</ear1>
-			<ear2>Merman's Earring</ear2>
+			<ear2>Crimson Earring</ear2>
 			<ring1>Ruby Ring</ring1>
 			<ring2>Ruby Ring</ring2>
 			<back>Dino Mantle</back>
@@ -183,19 +183,22 @@
 		<if advanced="$set=STR">
 				
 		</if><else>
-			<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
-				<!-- NIGHT -->
-				
-				<equip>
-					<ear2>Merman's Earring</ear2>
-				</equip>
+			<if advanced="$Set!=FireRes">
+				<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
+					<!-- NIGHT -->
+					
+					<equip>
+						<ear2>Merman's Earring</ear2>
+					</equip>
+				</if>
+				<else>
+					<!-- DAY -->
+					<equip>
+						<ear2>Fenrir's Earring</ear2>
+					</equip>
+				</else>
 			</if>
-			<else>
-				<!-- DAY -->
-				<equip>
-					<ear2>Fenrir's Earring</ear2>
-				</equip>
-			</else>
+			
 		</else>
 		
 
