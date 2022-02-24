@@ -412,15 +412,15 @@
 				<equip set="FireRes">
 					<range>Angel Lyre</range>
 				</equip>
-			</if><elseif advanced="($Cerb=1)&($BalladString=0)">
+			</if><elseif advanced="($Cerb=1)AND($BalladString=0)">
 				<equip set="FireRes">
 					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><elseif advanced="($Cerb=0)&($BalladString=1)">
+			</elseif><elseif advanced="($Cerb=0)AND($BalladString=1)">
 				<equip set="String">
 					<range>Angel Lyre</range>
 				</equip>
-			</elseif><elseif advanced="($Cerb=0)&($BalladString=0)">
+			</elseif><elseif advanced="($Cerb=0)AND($BalladString=0)">
 				<equip set="Wind">
 					<range>Faerie Piccolo</range>
 				</equip>
