@@ -91,6 +91,18 @@
 			<ring1>Rajas Ring</ring1>
 			<ring2>Victory Ring</ring2>
 		</set>
+		<set name="DeathBlossom">
+			<head>Voyager Sallet</head>
+			<legs>Warlock's Tights</legs>
+			<feet>Errant Pigaches</feet>
+			<hands>Alkyoneus's Brc.</hands>
+			<neck>Promise Badge</neck>
+			<waist>Warwolf Belt</waist>
+			<back>Forager's Mantle</back>
+			<ear2>Triumph Earring</ear2>
+			<ring1>Rajas Ring</ring1>
+			<ring2>Sapphire Ring</ring2>
+		</set>
 		<set name="Fastcast">
 			<head>Warlock's Chapeau</head>
 			<body>Royal Redingote</body>
@@ -188,7 +200,7 @@
 		<cmd input="/pdt">
 			<setvar name="Set" value="PDT"/>
 		</cmd>
-		<cmd input="/ws">
+		<cmd input="/str">
 			<setvar name="Set" value="SavageBlade"/>
 		</cmd>
 	</inputcommands>
@@ -255,6 +267,12 @@
 			<equip>
 				<head>Warlock's Chapeau</head>
 				<body>Kingdom Aketon</body>
+			</equip>
+		</if>
+
+		<if eq_main="Vorpal Sword">
+			<equip lock="true">
+				<main>Vorpal Sword</main>
 			</equip>
 		</if>
 	</idlegear>
@@ -398,6 +416,8 @@
 		</if>
 		<elseif ad_name="Savage Blade">
 			<equip set="SavageBlade"/>
+		</elseif ><elseif ad_name="Death Blossom">
+			<equip set="DeathBlossom"/>
 		</elseif>
 	</weaponskill>
 </ashitacast>
