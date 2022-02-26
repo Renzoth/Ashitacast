@@ -246,7 +246,7 @@
 	</sets>
 
 	<variables>
-		<var name="set">Idle</var>
+		<var name="Set">Idle</var>
 		<var name="Cerb">0</var>
 		<var name="BalladString">0</var>
 	</variables>
@@ -497,6 +497,12 @@
 			</equip>
 		</elseif>
 
+		<if ad_skill="enhancingmagic">
+			<equip>
+				<neck>Enhancing Torque</neck>
+			</equip>
+		</if>
+
 		<if ad_type="WhiteMagic">
 			<equip set="MND"/>
 			<if ad_name="Cure*">
@@ -512,6 +518,7 @@
 				Enhancing Skill 298 (Torque,AF2 Hands,Cape,AF Legs): 81MND required 
 				Enhancing Skill 301 (Torque,Jupon,AF2 Hands,Cape,AF Legs): 80MND required -->
 			<elseif ad_name="Stoneskin">
+				<addtochat color="200">STONESKIN</addtochat>
 				<equip>
 					<main>Neptune's Staff</main>
 					<neck>Promise Badge</neck>
@@ -529,11 +536,7 @@
 			</if>
 		</elseif>
 
-		<if ad_skill="enhancingmagic">
-			<equip>
-				<neck>Enhancing Torque</neck>
-			</equip>
-		</if>
+		
 	</midmagic>
 
 	<idlegear>
