@@ -111,39 +111,28 @@
 		<command delay="1000">/macro book 3</command>
 	</init>
 	<variables>
-		<var name="Idle">1</var>
-		<var name="Eva">0</var>
+		<var name="Set">Idle</var>
 	</variables>
 	<inputcommands>
+		<cmd input="/idle">
+			<setvar name="Set" value="Idle"/>
+		</cmd>
 		<cmd input="/bc">
 			<setvar name="Set" value="BC"/>
 		</cmd>
 		<cmd input="/eva">
-			<setvar name="Idle" value="0"/>
-			<if advanced="$Eva=0">
-				<setvar name="Eva" value="1"/>
-			</if>
-		</cmd>
-		<cmd input="/eva off">
-			<if advanced="$Eva=1">
-				<setvar name="Eva" value="0"/>
-				<setvar name="Idle" value="1"/>
-			</if>
+			<setvar name="Set" value="EVA"/>
 		</cmd>
 	</inputcommands>
 	<idlegear>
-		<if advanced="$Idle=1">
-			<equip set="Idle"/>
-		</if><elseif advanced="$Eva=1">
-			<equip set="Eva"/>
-		</elseif>
-		<if p_status="Idle">
-		</if><elseif p_status="Engaged">
+		<equip set="$Set"/>
+
+		<if p_status="Engaged">
 			<equip>
 				<hands>Dusk Gloves</hands>
 				<feet>Dusk Ledelsens</feet>
 			</equip>
-		</elseif>
+		</if>
 
 		<if advanced="%p_subjob=NIN">
 			<equip>
@@ -163,20 +152,17 @@
 
 		<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
 			<!-- NIGHT -->
-			<if advanced="$Idle=1">
+			<if advanced="$Set=Idle">
 				<equip>
 					<ear2>Merman's Earring</ear2>
 				</equip>
 				
-			</if><elseif advanced="$Eva=1">
+			</if><elseif advanced="$Set=EVA">
 				<equip>
 					<ear2>Elusive Earring</ear2>
 				</equip>
 				
 			</elseif>
-			<equip>
-				
-			</equip>
 		</if>
 		<else>
 			<!-- DAY -->
