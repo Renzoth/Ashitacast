@@ -217,6 +217,12 @@
 	</preranged>
 
 	<midranged>
+		<if advanced="$Set=RA-Idle">
+			<equip>
+				<neck>Peacock Charm</neck>
+				<ring1>Merman's Ring</ring1>
+			</equip>
+		</if>
 	</midranged>
 
 	<premagic>
