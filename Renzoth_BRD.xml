@@ -243,6 +243,10 @@
 			<ring2>Balrahn's Ring</ring2>
 			<back>Jester's Cape +1</back>
 		</set>
+		<set name="BC">
+			<head>Protective Specs.</head>
+			<body>Boneworker's Apn.</body>
+		</set>
 	</sets>
 
 	<variables>
@@ -273,6 +277,9 @@
 		</cmd>
 		<cmd input="/balladwind">
 			<setvar name="BalladString" value="0"/>
+		</cmd>
+		<cmd input="/bc">
+			<setvar name="Set" value="BC"/>
 		</cmd>
 		<cmd input="/54sync">
 			<setvar name="Set" value="54sync"/>

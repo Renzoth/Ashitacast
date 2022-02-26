@@ -102,6 +102,10 @@
 			<ring2>Horn Ring +1</ring2>
 			<back>Nomad's Mantle +1</back>
 		</set>
+		<set name="BC">
+			<head>Protective Specs.</head>
+			<body>Boneworker's Apn.</body>
+		</set>
 	</sets>
 	<init>
 		<command delay="1000">/macro book 3</command>
@@ -111,6 +115,9 @@
 		<var name="Eva">0</var>
 	</variables>
 	<inputcommands>
+		<cmd input="/bc">
+			<setvar name="Set" value="BC"/>
+		</cmd>
 		<cmd input="/eva">
 			<setvar name="Idle" value="0"/>
 			<if advanced="$Eva=0">

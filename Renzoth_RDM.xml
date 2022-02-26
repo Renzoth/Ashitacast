@@ -149,9 +149,10 @@
 			<ring2>Vilma's Ring</ring2>
 			<back>Red Cape</back>
 		</set>
-		<include>
-			<item quantity="12">Echo Drops</item>
-		</include>
+		<set name="BC">
+			<head>Protective Specs.</head>
+			<body>Boneworker's Apn.</body>
+		</set>
 	</sets>
 
 	<init>
@@ -202,6 +203,9 @@
 		</cmd>
 		<cmd input="/str">
 			<setvar name="Set" value="SavageBlade"/>
+		</cmd>
+		<cmd input="/bc">
+			<setvar name="Set" value="BC"/>
 		</cmd>
 	</inputcommands>
 

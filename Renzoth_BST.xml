@@ -71,6 +71,10 @@
 			<ring2>Jaeger Ring</ring2>
 			<back>Exact. Mantle +1</back>
 		</set>
+		<set name="BC">
+			<head>Protective Specs.</head>
+			<body>Boneworker's Apn.</body>
+		</set>
 		<include>
 		</include>
 	</sets>
@@ -91,6 +95,9 @@
 		<var name="Idle">1</var>
 	</variables>
 	<inputcommands>
+		<cmd input="/bc">
+			<setvar name="Set" value="BC"/>
+		</cmd>
 		<cmd input="/couriercarrie">
 			<equip>
 				<ammo>Fish Oil Broth</ammo>
@@ -153,7 +160,7 @@
 			</if>
 
 			<if >
-				<if advanced="(%p_subjob=WHM)&(%p_mp &lt;= 49)">
+				<if advanced="(%p_subjob=WHM)AND(%p_mp &lt;= 49)">
 					<equip>
 						<body>Gaudy Harness</body>
 					</equip>

@@ -116,6 +116,10 @@
 			<legs></legs>
 			<feet></feet>
 		</set>
+		<set name="BC">
+			<head>Protective Specs.</head>
+			<body>Boneworker's Apn.</body>
+		</set>
 		<include>
 		</include>
 	</sets>
@@ -123,6 +127,9 @@
 		<var name="Idle">1</var>
 	</variables>
 	<inputcommands>
+		<cmd input="/bc">
+			<setvar name="Set" value="BC"/>
+		</cmd>
 	</inputcommands>
 	<idlegear>
 		<equip set="Idle"/>

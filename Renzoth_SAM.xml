@@ -141,6 +141,10 @@
 			<ring2>Ruby Ring</ring2>
 			<back>Dino Mantle</back>
 		</set>
+		<set name="BC">
+			<head>Protective Specs.</head>
+			<body>Boneworker's Apn.</body>
+		</set>
 	</sets>
 	<init>
 		<!-- <command delay="1000">/macro book 3</command> -->
@@ -154,6 +158,9 @@
 		</cmd>
 		<cmd input="/idle">
 			<setvar name="Set" value="Idle"/>
+		</cmd>
+		<cmd input="/bc">
+			<setvar name="Set" value="BC"/>
 		</cmd>
 		<cmd input="/raidle">
 			<setvar name="Set" value="RA-Idle"/>
