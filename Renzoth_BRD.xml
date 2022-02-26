@@ -249,6 +249,10 @@
 		</set>
 	</sets>
 
+	<init>
+		<command delay="1000">/macro book 1</command>
+	</init>
+
 	<variables>
 		<var name="Set">Idle</var>
 		<var name="Cerb">0</var>

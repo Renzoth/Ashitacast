@@ -123,6 +123,9 @@
 		<include>
 		</include>
 	</sets>
+	<init>
+		<command delay="1000">/macro book 5</command>
+	</init>
 	<variables>
 		<var name="Idle">1</var>
 	</variables>

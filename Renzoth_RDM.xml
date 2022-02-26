@@ -194,6 +194,7 @@
 		</cmd>
 		<cmd input="/melee">
 			<setvar name="Set" value="Melee"/>
+			<command delay="1000">/macro book 20</command>
 		</cmd>
 		<cmd input="/empty">
 			<setvar name="Set" value="Empty"/>

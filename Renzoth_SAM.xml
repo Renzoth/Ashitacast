@@ -147,7 +147,7 @@
 		</set>
 	</sets>
 	<init>
-		<!-- <command delay="1000">/macro book 3</command> -->
+		<command delay="1000">/macro book 7</command>
 	</init>
 	<variables>
 		<var name="Set">Idle</var>
