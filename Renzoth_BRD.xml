@@ -31,7 +31,6 @@
 			<waist>Qiqirn Sash +1</waist>
 		</set>
 		<set name="CHR">
-			<sub>Bugard Strap +1</sub>
 			<head>Bard's Roundlet</head>
 			<body>Royal Redingote</body>
 			<hands>Sha'ir Gages</hands>
@@ -46,7 +45,6 @@
 			<back>Jester's Cape +1</back>
 		</set>
 		<set name="Wind">
-			<sub>Bugard Strap +1</sub>
 			<head>Bard's Roundlet</head>
 			<body>Minstrel's Coat</body>
 			<hands>Choral Cuffs</hands>
@@ -61,7 +59,6 @@
 			<back>Echo Cape</back>
 		</set>
 		<set name="String">
-			<sub>Bugard Strap +1</sub>
 			<head>Bard's Roundlet</head>
 			<body>Minstrel's Coat</body>
 			<hands>Choral Cuffs</hands>
@@ -83,14 +80,13 @@
 			<feet>Suzaku's Sune-Ate</feet>
 			<neck>Peacock Charm</neck>
 			<waist>Headlong Belt</waist>
-			<ear1>Merman's Earring</ear1>
+			<ear1>Brutal Earring</ear1>
 			<ear2>Merman's Earring</ear2>
 			<ring1>Rajas Ring</ring1>
 			<ring2>Sniper's Ring +1</ring2>
 			<back>Amemet Mantle +1</back>
 		</set>
 		<set name="MND">
-			<sub>Bugard Strap +1</sub>
 			<head>Errant Hat</head>
 			<body>Errant Hpl.</body>
 			<hands>Devotee's Mitts</hands>
@@ -267,7 +263,7 @@
 		<cmd input="/melee">
 			<setvar name="Cerb" value="0"/>
 			<setvar name="Set" value="Melee"/>
-		</cmd>
+		</cmd>	
 		<cmd input="/empty">
 			<setvar name="Cerb" value="0"/>
 			<setvar name="Set" value="Empty"/>
@@ -407,9 +403,15 @@
 				<range>Traversiere +2</range>
 			</equip>
 		</elseif><elseif ad_name="Valor Minuet*">
-			<equip set="Wind">
-				<range>Cornette +2</range>
-			</equip>
+			<if advanced="$Cerb=1">
+				<equip set="FireRes">
+					<range>Cornette +2</range>
+				</equip>
+			</if><else>
+				<equip set="Wind">
+					<range>Cornette +2</range>
+				</equip>
+			</else>
 		</elseif><elseif ad_name="*Mazurka">
 			<equip set="String">
 				<range>Angel Lyre</range>
@@ -514,38 +516,37 @@
 			</equip>
 		</if>
 
-		<if ad_type="WhiteMagic">
-			<equip set="MND"/>
-			<if ad_name="Cure*">
-				<equip>
-					<main>Apollo's Staff</main>
-					<neck>Healing Torque</neck>
-				</equip>
-			</if>
-			<!-- Minimum requirements for capping Stoneskin damage mitigation (350dmg)
-				Enhancing Skill 278 (Torque,AF Legs): 88MND required
-				Enhancing Skill 293 (Torque,AF2 Hands,AF Legs): 84MND required 
-				Enhancing Skill 296 (Torque,Jupon,AF2 Hands,AF Legs): 82MND required
-				Enhancing Skill 298 (Torque,AF2 Hands,Cape,AF Legs): 81MND required 
-				Enhancing Skill 301 (Torque,Jupon,AF2 Hands,Cape,AF Legs): 80MND required -->
-			<elseif ad_name="Stoneskin">
-				<addtochat color="200">STONESKIN</addtochat>
-				<equip>
-					<main>Neptune's Staff</main>
-					<neck>Promise Badge</neck>
-				</equip>
-			</elseif><elseif ad_name="Silence">
-				<equip>
-					<main>Auster's Staff</main>
-					<neck>Enfeebling Torque</neck>
-				</equip>
-			</elseif>
-		</if><elseif ad_type="Ninjutsu">
+		<if ad_name="Cure*">
+			<equip set="MND">
+				<main>Apollo's Staff</main>
+				<neck>Healing Torque</neck>
+			</equip>
+		</if>
+		<!-- Minimum requirements for capping Stoneskin damage mitigation (350dmg)
+			Enhancing Skill 278 (Torque,AF Legs): 88MND required
+			Enhancing Skill 293 (Torque,AF2 Hands,AF Legs): 84MND required 
+			Enhancing Skill 296 (Torque,Jupon,AF2 Hands,AF Legs): 82MND required
+			Enhancing Skill 298 (Torque,AF2 Hands,Cape,AF Legs): 81MND required 
+			Enhancing Skill 301 (Torque,Jupon,AF2 Hands,Cape,AF Legs): 80MND required -->
+		<elseif ad_name="Stoneskin">
+			<addtochat color="200">STONESKIN</addtochat>
+			<equip set="MND">
+				<main>Neptune's Staff</main>
+				<neck>Promise Badge</neck>
+			</equip>
+		</elseif><elseif ad_name="Silence">
+			<equip set="MND">
+				<main>Auster's Staff</main>
+				<neck>Enfeebling Torque</neck>
+			</equip>
+		</elseif>
+		
+		<if ad_type="Ninjutsu">
 			<equip set="Haste"/>
 			<if ad_name="Monomi*">
 				<command>/cancel 71</command>
 			</if>
-		</elseif>
+		</if>
 
 		
 	</midmagic>
@@ -572,7 +573,7 @@
 				</equip>
 			</else>
 
-			<if advanced="(%p_joblevel &lt;= 30)">
+			<!-- <if advanced="(%p_joblevel &lt;= 30)">
 				<equip set="30cap"/>
 			</if><elseif advanced="(%p_joblevel &lt;= 40)">
 				<equip set="40cap"/>
@@ -582,18 +583,19 @@
 			</elseif>
 			<elseif advanced="(%p_joblevel &lt;= 74)">
 				<equip set="60cap"/>
-			</elseif>
+			</elseif> -->
 		</if><elseif advanced="$set=Melee">
 			<if p_subjob="WHM">
 				<equip>
-					<main>Joyeuse</main>
+					<main>Lyft Jambiya</main>
 					<sub>Genbu's Shield</sub>
 				</equip>
 			</if><elseif p_subjob="NIN">
 				<equip>
-					<main>Joyeuse</main>
-					<sub>Genbu's Shield</sub>
+					<main>Lyft Jambiya</main>
+					<sub>Joyeuse</sub>
 					<ear1>Suppanomimi</ear1>
+					<ear2>Brutal Earring</ear2>
 				</equip>
 			</elseif>
 
