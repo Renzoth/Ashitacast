@@ -32,7 +32,7 @@
 		</set>
 		<set name="CHR">
 			<head>Bard's Roundlet</head>
-			<body>Royal Redingote</body>
+			<body>Kirin's Osode</body>
 			<hands>Sha'ir Gages</hands>
 			<legs>Bard's Cannions</legs>
 			<feet>Dance Shoes</feet>
@@ -120,7 +120,7 @@
 		</set>
 		<set name="HPDown">
 			<head>Zenith Crown</head>
-			<body>Yigit Gomlek</body>
+			<body>Sha'ir Manteel</body>
 			<hands>Zenith Mitts</hands>
 			<legs>Zenith Slacks</legs>
 			<feet>Rostrum Pumps</feet>
@@ -147,7 +147,7 @@
 		</set> -->
 		<set name="Haste">
 			<head>Walahra Turban</head>
-			<body>Scp. Harness +1</body>
+			<body>Sha'ir Manteel</body>
 			<hands>Dusk Gloves</hands>
 			<waist>Headlong Belt</waist>
 			<legs>Byakko's Haidate</legs>
@@ -563,7 +563,7 @@
 				</if><else>
 					<equip>
 						<head>Walahra Turban</head>
-						<body>Yigit Gomlek</body>
+						<body>Sha'ir Manteel</body>
 					</equip>
 				</else>
 			</if><else>
@@ -612,11 +612,11 @@
 		<else>
 		</else>
 
-		<if e_area="Northern San d'Oria|Southern San d'Oria|Port San d'Oria">
+		<!-- <if e_area="Northern San d'Oria|Southern San d'Oria|Port San d'Oria">
 			<equip>
 				<body>Kingdom Aketon</body>
 			</equip>
-		</if>
+		</if> -->
 		<if eq_ring1="Anniversary Ring">
 			<equip lock="true">
 				<ring1>Anniversary Ring</ring1>
