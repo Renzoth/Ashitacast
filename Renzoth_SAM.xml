@@ -14,12 +14,12 @@
 			<ammo>Tiphia Sting</ammo>
 			<head>Walahra Turban</head>
 			<body>Haubergeon</body>
-			<hands>Hachiman Kote</hands>
+			<hands>Bandomusha Kote</hands>
 			<legs>Byakko's Haidate</legs>
 			<feet>Hmn. Sune-ate</feet>
 			<neck>Chivalrous Chain</neck>
 			<waist>Headlong Belt</waist>
-			<ear1>Merman's Earring</ear1>
+			<ear1>Brutal Earring</ear1>
 			<ear2>Merman's Earring</ear2>
 			<ring1>Rajas Ring</ring1>
 			<ring2>Sniper's Ring +1</ring2>
@@ -38,7 +38,7 @@
 			<neck>Chivalrous Chain</neck>
 			<waist>Headlong Belt</waist>
 			<ear1>Merman's Earring</ear1>
-			<ear2>Merman's Earring</ear2>
+			<ear2>Brutal Earring</ear2>
 			<ring1>Rajas Ring</ring1>
 			<ring2>Sniper's Ring +1</ring2>
 			<back>Forager's Mantle</back>
@@ -62,7 +62,7 @@
 			<feet>Hmn. Sune-Ate</feet>
 			<neck>Chivalrous Chain</neck>
 			<waist>Warwolf Belt</waist>
-			<ear1>Fowling Earring</ear1>
+			<ear1>Brutal Earring</ear1>
 			<ear2>Triumph Earring</ear2>
 			<ring1>Rajas Ring</ring1>
 			<ring2>Flame Ring</ring2>
@@ -155,6 +155,7 @@
 	<inputcommands>
 		<cmd input="/str">
 			<setvar name="Set" value="STR"/>
+			<command delay="1000">/gl blink</command>
 		</cmd>
 		<cmd input="/idle">
 			<setvar name="Set" value="Idle"/>
@@ -249,7 +250,12 @@
 			<equip>
 				<head>Myochin Kabuto</head>
 			</equip>
-		</if>
+		</if><elseif ad_name="Provoke">
+			<equip>
+				<head>Aegishjalmr</head>
+				<body>Arhat's Gi</body>
+			</equip>
+		</elseif>
 		<elseif ad_name="Steal">
 		</elseif><elseif ad_name="Curing Waltz II">
 			<equip set="CHR"/>
@@ -257,8 +263,8 @@
 	</jobability>
 
 	<weaponskill>
-		<equip set="STR"/>
-		<!-- <if ad_name="Evisceration">
-		</if> -->
+		<if advanced="$Set!=FireRes">
+			<equip set="STR"/>
+		</if>
 	</weaponskill>
 </ashitacast>
