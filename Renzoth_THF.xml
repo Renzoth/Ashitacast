@@ -172,7 +172,7 @@
 		<if advanced="%p_subjob=NIN">
 			<if advanced="$TH=1">
 				<equip>
-					<main>Harpe</main>
+					<main>Harpe</main> 
 					<sub>Thief's Knife</sub>
 				</equip>
 			</if><else>
