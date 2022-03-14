@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE xml>
 <ashitacast>
 	<settings>
 		<buffupdate>true</buffupdate>
 		<statusupdate>true</statusupdate>
-		<hpupdate>true</hpupdate>
+		<hpupdate>false</hpupdate>
 		<autoupdate>true</autoupdate>
 	</settings>
 	<sets>
 		<set name="Idle">
 			<main>Terra's Staff</main>
 			<sub>Bugard Strap +1</sub>
-			<hands>Sha'ir Gages</hands>
-			<legs>Bard's Cannions</legs>
+			<head>Darksteel Cap +1</head>
+			<body>Dalmatica</body>
+			<hands>Dst. Mittens +1</hands>
+			<legs>Dst. Subligar +1</legs>
 			<feet>Rostrum Pumps</feet>
 			<neck>Piper's Torque</neck>
-			<waist>Gleeman's Belt</waist>
-			<ear1>Helenus's Earring</ear1>
-			<ear2>Cass. Earring</ear2>
-			<ring1>Minstrel's Ring</ring1>
-			<ring2>Light Ring</ring2>
-			<back>Jester's Cape +1</back>
+			<waist>Scouter's Rope</waist>
+			<ear1>Merman's Earring</ear1>
+			<ear2>Merman's Earring</ear2>
+			<ring1>Merman's Ring</ring1>
+			<ring2>Merman's Ring</ring2>
+			<back>Cheviot Cape</back>
 		</set>
 		<set name="Resting">
 			<main>Pluto's Staff</main>
@@ -86,6 +86,23 @@
 			<ring2>Sniper's Ring +1</ring2>
 			<back>Amemet Mantle +1</back>
 		</set>
+		<set name="MaxMP">
+			<main>Terra's Staff</main>
+			<sub>Bugard Strap +1</sub>
+			<range>Angel Lyre</range>
+			<head>Zenith Crown</head>
+			<body>Dalmatica</body>
+			<hands>Zenith Mitts</hands>
+			<legs>Zenith Slacks</legs>
+			<feet>Rostrum Pumps</feet>
+			<neck>Star Necklace</neck>
+			<waist>Qiqirn Sash +1</waist>
+			<ear1>Loquac. Earring</ear1>
+			<ear2>Astral Earring</ear2>
+			<ring1>Serket Ring</ring1>
+			<ring2>Vilma's Ring</ring2>
+			<back>Blue Cape +1</back>
+		</set>
 		<set name="MND">
 			<head>Errant Hat</head>
 			<body>Errant Hpl.</body>
@@ -126,25 +143,11 @@
 			<feet>Rostrum Pumps</feet>
 			<neck>Star Necklace</neck>
 			<waist>Penitent's Rope</waist>
-			<ear1>Astral Earring</ear1>
+			<ear2>Astral Earring</ear2>
 			<ring1>Minstrel's Ring</ring1>
 			<ring2>Serket Ring</ring2>
 			<back>Blue Cape +1</back>
 		</set>
-		<!-- <set name="HPUp">
-			<sub>Raptor Strap +1</sub>
-			<head>Genbu's Kabuto</head>
-			<body>Savage Separates</body>
-			<hands>Pallas's Bracelets</hands>
-			<legs>Choral Cannions</legs>
-			<feet>Savage Gaiters</feet>
-			<neck>Promise Badge</neck>
-			<belt>Warrior's Belt +1</belt>
-			<ear1>Bloodbead Earring</ear1>
-			<ear2>Shield Earring</ear2>
-			<ring1>Minstrel's Ring</ring1>
-			<ring2>Bomb Queen Ring</ring2>
-		</set> -->
 		<set name="Haste">
 			<head>Walahra Turban</head>
 			<body>Sha'ir Manteel</body>
@@ -152,10 +155,6 @@
 			<waist>Headlong Belt</waist>
 			<legs>Byakko's Haidate</legs>
 			<feet>Sha'ir Crackows</feet>
-		</set>
-		<set name="SongPrecast">
-			<ring1>Minstrel's Ring</ring1>
-			<feet>Rostrum Pumps</feet>
 		</set>
 		<set name="60cap">
 			<main>Terra's Staff</main>
@@ -243,10 +242,44 @@
 			<head>Protective Specs.</head>
 			<body>Boneworker's Apn.</body>
 		</set>
+		<set name="HPUp">
+			<main>Terra's Staff</main>
+			<sub>Raptor Strap +1</sub>
+			<head>Genbu's Kabuto</head>
+			<body>Sha'ir Manteel</body>
+			<hands>Alkyoneus's Brc.</hands>
+			<legs>Sha'ir Seraweels</legs>
+			<feet>Dusk Ledelsens</feet>
+			<neck>Bloodbead Amulet</neck>
+			<waist>Marid Belt</waist>
+			<ear1>Loquac. Earring</ear1>
+			<ear2>Bloodbead Earring</ear2>
+			<ring1>Minstrel's Ring</ring1>
+			<ring2>Bomb Queen Ring</ring2>
+			<back>Gigant Mantle</back>
+		</set>
+		<set name="MeritPulling">
+			<main>Terra's Staff</main>
+			<sub>Bugard Strap +1</sub>
+			<head>Walahra Turban</head>
+			<body>Sha'ir Manteel</body>
+			<hands>Sha'ir Gages</hands>
+			<legs>Bard's Cannions</legs>
+			<feet>Rostrum Pumps</feet>
+			<neck>Piper's Torque</neck>
+			<waist>Gleeman's Belt</waist>
+			<ear1>Helenus's Earring</ear1>
+			<ear2>Cass. Earring</ear2>
+			<ring1>Minstrel's Ring</ring1>
+			<ring2>Light Ring</ring2>
+			<back>Jester's Cape +1</back>
+		</set>
 	</sets>
 
 	<init>
 		<command delay="1000">/macro book 1</command>
+		<command delay="2000">/lockstyleset 4</command>
+		<command delay="3000">/gl blink</command>
 	</init>
 
 	<variables>
@@ -278,8 +311,17 @@
 		<cmd input="/balladwind">
 			<setvar name="BalladString" value="0"/>
 		</cmd>
+		<cmd input="/meritpulling">
+			<setvar name="Set" value="MeritPulling"/>
+		</cmd>
 		<cmd input="/bc">
 			<setvar name="Set" value="BC"/>
+		</cmd>
+		<cmd input="/hpup">
+			<setvar name="Set" value="HPUp"/>
+		</cmd>
+		<cmd input="/hpdown">
+			<setvar name="Set" value="HPDown"/>
 		</cmd>
 		<cmd input="/54sync">
 			<setvar name="Set" value="54sync"/>
@@ -375,20 +417,23 @@
 				<command>/ma "Cure" &lt;t&gt;</command>
 			</else>
 		</cmd>
-	</inputcommands>
 
-	<premagic>
-		<if ad_type="BardSong">
-			<if advanced="$Cerb!=1">
-				<equip set="HPDown"/>
-			</if>
-			<!-- <equip set="HPUp"/> -->
-		</if>
-	</premagic>
+		<cmd input="/sneak">
+			<if advanced="%p_subjob=NIN">
+				<command>/nin "Monomi: Ichi" &lt;me&gt;</command>
+			</if><else>
+				<command>/ma "Sneak" &lt;me&gt;</command>
+			</else>
+		</cmd>
+		<cmd input="/invisible">
+			<if advanced="%p_subjob=NIN">
+				<command>/nin "Tonko: Ni" &lt;me&gt;</command>
+			</if><else>
+				<command>/ma "Invisible" &lt;me&gt;</command>
+			</else>
+		</cmd>
 
-	<midmagic>
-		<!-- Wind -->
-		<if ad_name="Advancing March|Victory March">
+		<cmd input="/equipmarch">
 			<if advanced="$Cerb=1">
 				<equip set="FireRes">
 					<range>Faerie Piccolo</range>
@@ -398,29 +443,34 @@
 					<range>Faerie Piccolo</range>
 				</equip>
 			</else>
-		</if><elseif ad_name="Sword Madrigal|Blade Madrigal">
+		</cmd>
+		<cmd input="/equipminuet">
+			<if advanced="$Cerb=1">
+				<equip set="FireRes">
+					<range>Cornette +2</range>
+				</equip>
+			</if><else>
+				<equip set="Wind">
+					<range>Cornette +2</range>
+				</equip>
+			</else>
+		</cmd>
+		<cmd input="/equipmadrigal">
 			<equip set="Wind">
 				<range>Traversiere +2</range>
 			</equip>
-		</elseif><elseif ad_name="Valor Minuet*">
-			<if advanced="$Cerb=1">
-				<equip set="FireRes">
-					<range>Cornette +2</range>
-				</equip>
-			</if><else>
-				<equip set="Wind">
-					<range>Cornette +2</range>
-				</equip>
-			</else>
-		</elseif><elseif ad_name="*Mazurka">
+		</cmd>
+		<cmd input="/equipmazurka">
 			<equip set="String">
 				<range>Angel Lyre</range>
 			</equip>
-		</elseif><elseif ad_name="*Etude">
+		</cmd>
+		<cmd input="/equipetude">
 			<equip set="Wind">
 				<range>Mythic Harp +1</range>
 			</equip>
-		</elseif><elseif ad_name="Mage's Ballad*">
+		</cmd>
+		<cmd input="/equipballad">
 			<if advanced="($Cerb=1)AND($BalladString=1)">
 				<equip set="FireRes">
 					<range>Angel Lyre</range>
@@ -437,29 +487,19 @@
 				<equip set="Wind">
 					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><else>
-				<equip set="Wind">
-					<range>Faerie Piccolo</range>
-				</equip>
-			</else>
-			<if advanced="$BalladString=1">
-				<equip set="String">
-					<range>Angel Lyre</range>
-				</equip>
-			</if><else>
-				<equip set="Wind">
-					<range>Faerie Piccolo</range>
-				</equip>
-			</else>
-		</elseif><elseif ad_name="Sheepfoe Mambo|Dragonfoe Mambo">
+			</elseif>
+		</cmd>
+		<cmd input="/equipmambo">
 			<equip set="Wind">
 				<range>Hellish Bugle</range>
 			</equip>
-		</elseif><elseif ad_name="*Prelude">
+		</cmd>
+		<cmd input="/equipprelude">
 			<equip set="Wind">
 				<range>Angel's Flute +1</range>
 			</equip>
-		</elseif><elseif ad_name="*Carol">
+		</cmd>
+		<cmd input="/equipcarol">
 			<if advanced="$Cerb=1">
 				<equip set="FireRes">
 					<range>Crumhorn +1</range>
@@ -469,46 +509,103 @@
 					<range>Crumhorn +1</range>
 				</equip>
 			</else>
-		</elseif>
-		<!-- STRING -->
-		<elseif ad_name="Army's Paeon*">
+		</cmd>
+		<cmd input="/equippaeon">
 			<equip set="String">
 				<range>Ebony Harp +1</range>
 			</equip>
-		</elseif><elseif ad_name="Knight's Minne*">
+		</cmd>
+		<cmd input="/equipminne">
 			<equip set="String">
 				<range>Harp +1</range>
 			</equip>
-		</elseif>
-		<!-- CHR -->
-		<elseif ad_name="Foe Lullaby">
+		</cmd>
+		<cmd input="/equipfoelullaby">
 			<equip set="CHR">
 				<main>Apollo's Staff</main>
 				<range>Nursemaid's Harp</range>
 			</equip>
-		</elseif><elseif ad_name="Horde Lullaby">
+		</cmd>
+		<cmd input="/equiphordelullaby">
 			<equip set="CHR">
 				<main>Apollo's Staff</main>
 				<range>Nursemaid's Harp</range>
 			</equip>
-		</elseif><elseif ad_name="Battlefield Elegy|Carnage Elegy">
+		</cmd>
+		<cmd input="/equipelegy">
 			<equip set="CHR">
 				<main>Terra's Staff</main>
 				<range>Horn +1</range>
 			</equip>
-		</elseif><elseif ad_name="*Threnody">
+		</cmd>
+		<cmd input="/equipthrenody">
 			<equip set="CHR">
 				<range>Sorrowful Harp</range>
 			</equip>
-		</elseif><elseif ad_name="Foe Requiem*">
+		</cmd>
+		<cmd input="/equiprequiem">
 			<equip set="CHR">
 				<main>Apollo's Staff</main>
 			</equip>
-		</elseif><elseif ad_name="Magic Finale">
+		</cmd>
+		<cmd input="/equipfinale">
 			<equip set="CHR">
 				<main>Apollo's Staff</main>
 			</equip>
+		</cmd>
+	</inputcommands>
+
+	<premagic>
+		<if ad_type="BardSong">
+			<if advanced="$Cerb!=1">
+				<equip set="HPUp"/>
+			</if>
+		</if>
+	</premagic>
+
+	<midmagic>
+		<!-- Wind -->
+		<if ad_name="*March">
+			<command delay="1000">/equipmarch</command>
+		</if><elseif ad_name="*Madrigal">
+			<command delay="1000">/equipmadrigal</command>
+		</elseif><elseif ad_name="Valor Minuet*">
+			<command delay="1000">/equipminuet</command>
+		</elseif><elseif ad_name="*Mazurka">
+			<command delay="1000">/equipmazurka</command>
+		</elseif><elseif ad_name="*Etude">
+			<command delay="1000">/equipetude</command>
+		</elseif><elseif ad_name="Mage's Ballad*">
+			<command delay="1000">/equipballad</command>
+		</elseif><elseif ad_name="*Mambo">
+			<command delay="1000">/equipmambo</command>
+		</elseif><elseif ad_name="*Prelude">
+			<command delay="1000">/equipprelude</command>
+		</elseif><elseif ad_name="*Carol">
+			<command delay="1000">/equipcarol</command>
 		</elseif>
+		<!-- STRING -->
+		<elseif ad_name="Army's Paeon*">
+			<command delay="1000">/equippaeon</command>
+		</elseif><elseif ad_name="Knight's Minne*">
+			<command delay="1000">/equipminne</command>
+		</elseif>
+		<!-- CHR -->
+		<elseif ad_name="Foe Lullaby">
+			<command delay="1000">/equipfoelullaby</command>
+		</elseif><elseif ad_name="Horde Lullaby">
+			<command delay="1000">/equiphordelullaby</command>
+		</elseif><elseif ad_name="*Elegy">
+			<command delay="1000">/equipelegy</command>
+		</elseif><elseif ad_name="*Threnody">
+			<command delay="1000">/equipthrenody</command>
+		</elseif><elseif ad_name="Foe Requiem*">
+			<command delay="1000">/equiprequiem</command>
+		</elseif><elseif ad_name="Magic Finale">
+			<command delay="1000">/equipfinale</command>
+		</elseif>
+
+		<!-- <equip set="HP-Up"/> -->
 
 		<if ad_skill="enhancingmagic">
 			<equip>
@@ -547,43 +644,13 @@
 				<command>/cancel 71</command>
 			</if>
 		</if>
-
-		
 	</midmagic>
 
 	<idlegear>
 		<equip set="$Set"/>
 
 		<if advanced="$set=Idle">
-			<if advanced="%p_subjob=WHM">
-				<if advanced="%p_mp &lt;= 150">
-					<equip>
-						<body>Royal Cloak</body>
-					</equip>
-				</if><else>
-					<equip>
-						<head>Walahra Turban</head>
-						<body>Sha'ir Manteel</body>
-					</equip>
-				</else>
-			</if><else>
-				<equip>
-					<head>Walahra Turban</head>
-					<body>Yigit Gomlek</body>
-				</equip>
-			</else>
-
-			<!-- <if advanced="(%p_joblevel &lt;= 30)">
-				<equip set="30cap"/>
-			</if><elseif advanced="(%p_joblevel &lt;= 40)">
-				<equip set="40cap"/>
-			</elseif>
-			<elseif advanced="(%p_joblevel &lt;= 50)">
-				<equip set="50cap"/>
-			</elseif>
-			<elseif advanced="(%p_joblevel &lt;= 74)">
-				<equip set="60cap"/>
-			</elseif> -->
+			
 		</if><elseif advanced="$set=Melee">
 			<if p_subjob="WHM">
 				<equip>
@@ -632,10 +699,6 @@
 				<ring1>Empress Band</ring1>
 			</equip>
 		</if>
-
-		<!-- <if advanced="(%p_hpp>75)">
-			<equip set="HPDown"/>
-		</if> -->
 		
 		<if p_status="resting">
 			<equip set="Resting" />
