@@ -12,18 +12,18 @@
 			<main>Terra's Staff</main>
 			<sub>Bugard Strap +1</sub>
 			<ammo>Hedgehog Bomb</ammo>
-			<!-- <head>Warlock's Chapeau</head>
-			<body>Royal Redingote</body> -->
+			<head>Warlock's Chapeau</head>
+			<body>Dalmatica</body>
 			<hands>Zenith Mitts</hands>
 			<legs>Crimson Cuisses</legs>
 			<feet>Errant Pigaches</feet>
 			<neck>Enfeebling Torque</neck>
 			<waist>Penitent's Rope</waist>
-			<ear1>Helenus's Earring</ear1>
-			<ear2>Cass. Earring</ear2>
+			<ear1>Loquac. Earring</ear1>
+			<ear2>Astral Earring</ear2>
 			<ring1>Serket Ring</ring1>
 			<ring2>Vilma's Ring</ring2>
-			<back>Rainbow Cape</back>
+			<back>Prism Cape</back>
 		</set>
 		<set name="Resting">
 			<main>Pluto's Staff</main>
@@ -57,7 +57,7 @@
 			<waist>Penitent's Rope</waist>
 			<ring1>Sapphire Ring</ring1>
 			<ring2>Sapphire Ring</ring2>
-			<back>White Cape</back>
+			<back>Prism Cape</back>
 		</set>
 		<set name="INT">
 			<ammo>Phtm. Tathlum</ammo>
@@ -69,15 +69,7 @@
 			<waist>Penitent's Rope</waist>
 			<ring1>Diamond Ring</ring1>
 			<ring2>Diamond Ring</ring2>
-			<back>Rainbow Cape</back>
-		</set>
-		<set name="STRWS">
-			<hands>Alkyoneus's Brc.</hands>
-			<neck>Spike Necklace</neck>
-			<waist>Ryl.Kgt. Belt</waist>
-			<back>Smilod. Mantle +1</back>
-			<ring1>Ruby Ring</ring1>
-			<ring2>Ruby Ring</ring2>
+			<back>Prism Cape</back>
 		</set>
 		<set name="SavageBlade">
 			<head>Voyager Sallet</head>
@@ -106,6 +98,7 @@
 		<set name="Fastcast">
 			<head>Warlock's Chapeau</head>
 			<body>Royal Redingote</body>
+			<ear1>Loquac. Earring</ear1>
 		</set>
 		<set name="Haste">
 			<head>Walahra Turban</head>
@@ -157,6 +150,8 @@
 
 	<init>
 		<command delay="1000">/macro book 2</command>
+		<command delay="5000">/lockstyleset 1</command>
+		<command delay="6000">/gl blink</command>
 	</init>
 
 	<variables>
@@ -195,6 +190,8 @@
 		<cmd input="/melee">
 			<setvar name="Set" value="Melee"/>
 			<command delay="1000">/macro book 20</command>
+			<command delay="2000">/lockstyleset 2</command>
+			<command delay="3000">/gl blink</command>
 		</cmd>
 		<cmd input="/empty">
 			<setvar name="Set" value="Empty"/>
@@ -212,31 +209,8 @@
 
 	<idlegear>
 		<equip set="$set"/>
-
-		<if advanced="$set=Idle">
-			<if advanced="%p_mp &lt;= 800">
-				<equip>
-					<body>Royal Cloak</body>
-				</equip>
-			</if><else>
-				<equip>
-					<head>Warlock's Chapeau</head>
-					<body>Yigit Gomlek</body>
-				</equip>
-			</else>
-		</if><elseif advanced="$set=Melee">
-
-			<if advanced="(%e_time>=18.00)|(%e_time&lt;=05.00)">
-				<equip>
-					<ear2>Merman's Earring</ear2>
-				</equip>
-			</if>
-			<else>
-				<equip>
-					<ear2>Fenrir's Earring</ear2>
-				</equip>
-			</else>
-			
+		
+		<if advanced="$set=Melee">
 			<if p_subjob="WHM">
 				<equip>
 					<main>Joyeuse</main>
@@ -251,13 +225,20 @@
 				</equip>
 			</elseif>
 
-			<if p_status="Engaged">
+			<if p_status="Idle">
+				<if advanced="%p_mp &lt; 600">
+					<equip>
+						<body>Dalmatica</body>
+					</equip>
+				</if>
+			</if>
+			<elseif p_status="Engaged">
 				<equip>
 					<hands>Dusk Gloves</hands>
 					<feet>Dusk Ledelsens</feet>
 				</equip>
-			</if>
-		</elseif>
+			</elseif>
+		</if>
 
 		<if p_status="resting">
 			<equip set="Resting"/>
@@ -268,16 +249,16 @@
 			</if>
 		</if>
 
-		<if e_area="Northern San d'Oria|Southern San d'Oria|Port San d'Oria">
+		<!-- <if e_area="Northern San d'Oria|Southern San d'Oria|Port San d'Oria">
 			<equip>
 				<head>Warlock's Chapeau</head>
 				<body>Kingdom Aketon</body>
 			</equip>
-		</if>
+		</if> -->
 
-		<if eq_main="Vorpal Sword">
+		<if eq_sub="Kraken Club">
 			<equip lock="true">
-				<main>Vorpal Sword</main>
+				<sub>Kraken Club</sub>
 			</equip>
 		</if>
 	</idlegear>
