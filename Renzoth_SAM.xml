@@ -265,6 +265,11 @@
 	<weaponskill>
 		<if advanced="$Set!=FireRes">
 			<equip set="STR"/>
+			<if ad_name="Tachi: Yukikaze|Tachi: Kasha|Tachi: Rana">
+				<equip>
+					<hands>Bandomusha Kote</hands>
+				</equip>
+			</if>
 		</if>
 	</weaponskill>
 </ashitacast>
