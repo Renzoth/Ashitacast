@@ -10,7 +10,7 @@
 	<sets>
 		<set name="Idle">
 			<head>Walahra Turban</head>
-			<body>Rapparee Harness</body>
+			<body>Dragon Harness</body>
 			<hands>War Gloves +1</hands>
 			<legs>Bravo's Subligar</legs>
 			<feet>Winged Boots</feet>
@@ -24,7 +24,7 @@
 		</set>
 		<set name="SA">
 			<head>Hecatomb Cap</head>
-			<body>Scp. Harness +1</body>
+			<body>Dragon Harness</body>
 			<hands>Rogue's Armlets</hands>
 			<legs>Dragon Subligar</legs>
 			<feet>Winged Boots</feet>
@@ -37,7 +37,8 @@
 			<back>Forager's Mantle</back>
 		</set>
 		<set name="TA">
-
+			<head>Hecatomb Cap</head>
+			<body>Dragon Harness</body>
 		</set>
 		<set name="RA">
 			<!-- <body>Noct Doublet +1</body>
@@ -232,7 +233,9 @@
 
 	<midmagic>
 		<if ad_type="Ninjutsu">
-			<equip set="Haste"/>
+			<equip set="Haste">
+				<ear1>Loquac. Earring</ear1>
+			</equip>
 			<if ad_name="Monomi*">
 				<command>/cancel 71</command>
 			</if>
