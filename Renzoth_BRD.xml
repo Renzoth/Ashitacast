@@ -89,7 +89,6 @@
 		<set name="MaxMP">
 			<main>Terra's Staff</main>
 			<sub>Bugard Strap +1</sub>
-			<range>Angel Lyre</range>
 			<head>Zenith Crown</head>
 			<body>Dalmatica</body>
 			<hands>Zenith Mitts</hands>
@@ -308,6 +307,9 @@
 		<cmd input="/balladstring">
 			<setvar name="BalladString" value="1"/>
 		</cmd>
+		<cmd input="/maxmp">
+			<setvar name="Set" value="MaxMP"/>
+		</cmd>
 		<cmd input="/balladwind">
 			<setvar name="BalladString" value="0"/>
 		</cmd>
@@ -471,19 +473,22 @@
 			</equip>
 		</cmd>
 		<cmd input="/equipballad">
-			<if advanced="($Cerb=1)AND($BalladString=1)">
+			<if advanced="($Cerb=1)&($BalladString=1)">
 				<equip set="FireRes">
 					<range>Angel Lyre</range>
 				</equip>
-			</if><elseif advanced="($Cerb=1)AND($BalladString=0)">
+			</if>
+			<elseif advanced="($Cerb=1)&($BalladString=0)">
 				<equip set="FireRes">
 					<range>Faerie Piccolo</range>
 				</equip>
-			</elseif><elseif advanced="($Cerb=0)AND($BalladString=1)">
+			</elseif>
+			<elseif advanced="($Cerb=0)&($BalladString=1)">
 				<equip set="String">
 					<range>Angel Lyre</range>
 				</equip>
-			</elseif><elseif advanced="($Cerb=0)AND($BalladString=0)">
+			</elseif>
+			<elseif advanced="($Cerb=0)&($BalladString=0)">
 				<equip set="Wind">
 					<range>Faerie Piccolo</range>
 				</equip>
