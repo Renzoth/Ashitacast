@@ -155,13 +155,23 @@
 			<equip>
 				<ear2>Merman's Earring</ear2>
 			</equip>
+
+			<if advanced="%p_mpp<97">
+				<equip>
+					<head></head>
+					<body>Vampire Cloak</body>
+				</equip>
+			</if>	
 		</if>
 		<else>
 			<!-- DAY -->
 			<equip>
 				<ear2>Fenrir's Earring</ear2>
 			</equip>
+
+			
 		</else>
+		
 	</idlegear>
 	<preranged>
 	</preranged>

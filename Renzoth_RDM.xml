@@ -12,11 +12,11 @@
 			<main>Terra's Staff</main>
 			<sub>Bugard Strap +1</sub>
 			<ammo>Hedgehog Bomb</ammo>
-			<head>Warlock's Chapeau</head>
+			<head>Duelist's Chapeau</head>
 			<body>Dalmatica</body>
 			<hands>Zenith Mitts</hands>
 			<legs>Crimson Cuisses</legs>
-			<feet>Errant Pigaches</feet>
+			<feet>Goliard Clogs</feet>
 			<neck>Enfeebling Torque</neck>
 			<waist>Penitent's Rope</waist>
 			<ear1>Loquac. Earring</ear1>
@@ -30,6 +30,7 @@
 			<head>Mirror Tiara</head>
 			<body>Yigit Gomlek</body>
 			<legs>Baron's Slops</legs>
+			<feet>Goliard Clogs</feet>
 			<neck>Beak Necklace</neck>
 			<waist>Qiqirn Sash +1</waist>
 		</set>
@@ -52,7 +53,7 @@
 			<body>Errant Hpl.</body>
 			<hands>Devotee's Mitts</hands>
 			<legs>Errant Slops</legs>
-			<feet>Errant Pigaches</feet>
+			<feet>Goliard Clogs</feet>
 			<neck>Promise Badge</neck>
 			<waist>Penitent's Rope</waist>
 			<ring1>Sapphire Ring</ring1>
@@ -65,6 +66,7 @@
 			<body>Errant Hpl.</body>
 			<hands>Errant Cuffs</hands>
 			<legs>Errant Slops</legs>
+			<feet>Goliard Clogs</feet>
 			<neck>Beak Necklace</neck>
 			<waist>Penitent's Rope</waist>
 			<ring1>Diamond Ring</ring1>
@@ -340,10 +342,13 @@
 				<ring1>Balrahn's Ring</ring1>
 			</equip>
 			<if ad_skill="enfeeblingmagic">
-				<if ad_type="WhiteMagic">
+				<!-- <if ad_type="WhiteMagic">
 					<equip set="MND"/>
-				</if>
+				</if><elseif ad_type="BlackMagic">
+					<equip set="INT"/>
+				</elseif> -->
 				<equip>
+					<head>Duelist's Chapeau</head>
 					<neck>Enfeebling Torque</neck>
 					<body>Warlock's Tabard</body>
 				</equip>
@@ -364,7 +369,7 @@
 				</equip>
 			</elseif>
 			<elseif ad_skill="darkmagic">
-				<equip>
+				<equip set="INT">
 					<neck>Dark Torque</neck>
 				</equip>
 			</elseif>

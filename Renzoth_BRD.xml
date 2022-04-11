@@ -11,7 +11,8 @@
 			<sub>Bugard Strap +1</sub>
 			<head>Darksteel Cap +1</head>
 			<body>Dalmatica</body>
-			<hands>Dst. Mittens +1</hands>
+			<!-- <hands>Dst. Mittens +1</hands> -->
+			<hands>Zenith Mitts</hands>
 			<legs>Dst. Subligar +1</legs>
 			<feet>Rostrum Pumps</feet>
 			<neck>Piper's Torque</neck>
@@ -27,6 +28,7 @@
 			<head>Mirror Tiara</head>
 			<body>Yigit Gomlek</body>
 			<legs>Baron's Slops</legs>
+			<feet>Goliard Clogs</feet>
 			<neck>Beak Necklace</neck>
 			<waist>Qiqirn Sash +1</waist>
 		</set>
@@ -35,7 +37,7 @@
 			<body>Kirin's Osode</body>
 			<hands>Sha'ir Gages</hands>
 			<legs>Bard's Cannions</legs>
-			<feet>Dance Shoes</feet>
+			<feet>Goliard Clogs</feet>
 			<neck>Piper's Torque</neck>
 			<waist>Gleeman's Belt</waist>
 			<ear1>Helenus's Earring</ear1>
@@ -249,6 +251,7 @@
 			<hands>Alkyoneus's Brc.</hands>
 			<legs>Sha'ir Seraweels</legs>
 			<feet>Dusk Ledelsens</feet>
+			<!-- <feet>Rostrum Pumps</feet> -->
 			<neck>Bloodbead Amulet</neck>
 			<waist>Marid Belt</waist>
 			<ear1>Loquac. Earring</ear1>
